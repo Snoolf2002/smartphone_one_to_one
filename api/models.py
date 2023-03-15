@@ -15,7 +15,7 @@ class Smartphones(models.Model):
     model = models.CharField(max_length=255)
     price = models.FloatField()
     img_url = models.CharField(max_length=255, default="no image")
-    details = models.OneToOneField('Details', on_delete=models.CASCADE)
+    details = models.OneToOneField(Details, on_delete=models.CASCADE)
     
     def __str__(self) -> str:
         return self.name

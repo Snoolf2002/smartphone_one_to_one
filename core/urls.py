@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from api.views import add_product, get_product, get_with_model, get_with_price_gt, get_with_price_lt
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', get_product),
+    path('api/model/<str:model>', get_with_model),
+    path('api/add/product', add_product),
+    path('api/price/gt/<str:gt>', get_with_price_gt),
+    path('api/price/lt/<str:lt>', get_with_price_lt),
+
 ]
